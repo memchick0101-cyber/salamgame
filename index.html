@@ -12,7 +12,7 @@
 :root{--bg:#0c1420;--panel:#172536;--panel2:#20344a;--gold:#c9a66b;--gold2:#f0d39a;--text:#eaf0f5;--muted:#a8b8c8;--line:#536d83;--red:#d87572;--blue:#75b9e8;--green:#82c6a0}
 *{box-sizing:border-box} body{margin:0;background:radial-gradient(ellipse at 50% -10%,#31465b 0,#142235 42%,#0a111c 100%);color:var(--text);font-family:Georgia,"Times New Roman",serif;min-height:100vh;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}
 button{font:inherit;color:inherit;cursor:pointer} .app{max-width:980px;margin:auto;padding:14px 12px 32px}
-.top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:4px 0 12px}.brand{font-size:13px;color:var(--muted);letter-spacing:2px;text-transform:uppercase}.brand b{color:var(--gold2);font-size:19px;letter-spacing:1px;display:block;margin-top:3px}.save{border:1px solid #bd8423;background:linear-gradient(#8a4b12,#4a260d);padding:11px 16px;border-radius:12px;font-weight:bold}
+.top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:4px 0 12px}.brand{font-size:13px;color:var(--muted);letter-spacing:2px;text-transform:uppercase}.brand b{color:var(--gold2);font-size:19px;letter-spacing:1px;display:block;margin-top:3px}.sound{border:1px solid #536d83;background:#20344a;padding:11px 13px;border-radius:12px;font-weight:bold;white-space:nowrap}.save{border:1px solid #bd8423;background:linear-gradient(#8a4b12,#4a260d);padding:11px 16px;border-radius:12px;font-weight:bold}
 .hero{border:2px solid var(--gold);background:linear-gradient(120deg,#263b50,#142337);padding:18px;border-radius:18px;box-shadow:0 14px 36px #0006}
 .herohead{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.name{font-size:22px;color:var(--gold2);font-weight:bold}.sub{font:13px Arial;color:var(--muted);margin-top:5px}.wealth{text-align:right;color:var(--gold2);font: bold 14px Arial;white-space:nowrap}
 .ribbon{margin-top:13px;display:flex;justify-content:space-between;gap:8px;align-items:center;flex-wrap:wrap}.badge{background:#120b07;border:1px solid #674015;border-radius:20px;padding:6px 10px;font:12px Arial;color:var(--muted)}
@@ -26,7 +26,7 @@ button{font:inherit;color:inherit;cursor:pointer} .app{max-width:980px;margin:au
 .overlay{position:fixed;inset:0;background:#000b;display:none;align-items:center;justify-content:center;padding:18px;z-index:5}.modal{width:min(460px,100%);background:#24160d;border:1px solid #8299ad;border-radius:20px;padding:22px;box-shadow:0 20px 80px #000;background:linear-gradient(145deg,#24384c,#142235)}.modal h2{color:var(--gold2);margin:0 0 10px}.modal p{line-height:1.5;color:var(--muted)}.modal button{width:100%;margin-top:8px;padding:12px;border-radius:9px;border:1px solid #a56b1c;background:#63350e}.modal .secondary{background:#17100b}
 .champion{display:flex;justify-content:space-between;gap:8px;align-items:center;padding:10px;margin:7px 0;background:#120b07;border:1px solid #79501f;border-radius:9px}.champion b{color:var(--gold2)}.champion small{display:block;color:var(--muted);font:11px Arial;margin-top:3px}.goalbox{padding:10px;background:#130c08;border:1px solid #79501f;border-radius:9px;line-height:1.5}.goalbox select{width:100%;padding:10px;margin-top:8px;background:#20140d;color:var(--text);border:1px solid #95601d;border-radius:8px}.goalprogress{height:8px;background:#080604;border-radius:10px;overflow:hidden;margin-top:8px}.goalprogress span{display:block;height:100%;background:linear-gradient(90deg,#bd7c1d,#ffd16b)}.modal .choice{display:block;text-align:left}.modal button:disabled{opacity:.35}
 .toast{position:fixed;bottom:calc(18px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);background:#39200d;border:1px solid var(--gold);padding:10px 15px;border-radius:20px;font:13px Arial;opacity:0;pointer-events:none;transition:.25s;z-index:8;max-width:90%;text-align:center}.toast.show{opacity:1}
-@media(max-width:650px){.app{padding:10px 9px 26px}.grid{grid-template-columns:1fr}.herohead{align-items:center}.name{font-size:19px}.wealth{font-size:12px}.stats{gap:4px 12px}.actiongrid{grid-template-columns:1fr 1fr}.act{min-height:72px;padding:10px 8px}.act strong{font-size:13px}.agebox{align-items:center}.advance{padding:11px 10px;min-width:118px;font-size:13px}.card{padding:12px}.brand b{font-size:17px}}
+@media(max-width:650px){.top{align-items:flex-start}.sound{padding:10px 9px;font-size:12px}.save{padding:10px 11px;font-size:12px}.app{padding:10px 9px 26px}.grid{grid-template-columns:1fr}.herohead{align-items:center}.name{font-size:19px}.wealth{font-size:12px}.stats{gap:4px 12px}.actiongrid{grid-template-columns:1fr 1fr}.act{min-height:72px;padding:10px 8px}.act strong{font-size:13px}.agebox{align-items:center}.advance{padding:11px 10px;min-width:118px;font-size:13px}.card{padding:12px}.brand b{font-size:17px}}
 </style>
 </head>
 <body>
@@ -34,7 +34,7 @@ button{font:inherit;color:inherit;cursor:pointer} .app{max-width:980px;margin:au
  <div class="top">
 <div class="brand">Летопись одного рода<b>⚔ Хроники Эйрвальда</b>
 </div>
-<button class="save" id="saveBtn">💾 Сохранить</button>
+<div style="display:flex;gap:7px;align-items:center"><button class="sound" id="soundBtn" aria-pressed="true">🔊 Звук: вкл.</button><button class="save" id="saveBtn">💾 Сохранить</button></div>
 </div>
  <section class="hero">
   <div class="herohead">
@@ -124,7 +124,7 @@ button{font:inherit;color:inherit;cursor:pointer} .app{max-width:980px;margin:au
 </div>
 </section>
  <div class="footer">Мир Эйрвальда · Каждая жизнь уникальна · Прогресс сохраняется на этом устройстве<br>
-<strong style="display:block;margin-top:8px;color:#c49a61;letter-spacing:1px">ХРОНИКИ ЭЙРВАЛЬДА · ВЕРСИЯ 3.3.1</strong>
+<strong style="display:block;margin-top:8px;color:#c49a61;letter-spacing:1px">ХРОНИКИ ЭЙРВАЛЬДА · ВЕРСИЯ 3.3.3</strong>
 </div>
 </div>
 <div class="overlay" id="overlay">
@@ -137,6 +137,26 @@ button{font:inherit;color:inherit;cursor:pointer} .app{max-width:980px;margin:au
 
 
 const $=id=>document.getElementById(id);
+
+// Небольшие синтезированные звуковые эффекты: без внешних файлов и сетевых запросов.
+let soundEnabled=true,audioCtx=null;
+try{soundEnabled=localStorage.getItem("eyrval_sound")!=="off";}catch(e){}
+function audio(){
+ if(!soundEnabled)return null;
+ try{const C=window.AudioContext||window.webkitAudioContext;if(!C)return null;if(!audioCtx)audioCtx=new C();if(audioCtx.state==="suspended")audioCtx.resume();return audioCtx;}catch(e){return null;}
+}
+function tone(freq,duration=.12,type="sine",volume=.045,delay=0){
+ const c=audio();if(!c)return;const o=c.createOscillator(),g=c.createGain(),t=c.currentTime+delay;
+ o.type=type;o.frequency.setValueAtTime(freq,t);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(volume,t+.012);g.gain.exponentialRampToValueAtTime(.0001,t+duration);
+ o.connect(g);g.connect(c.destination);o.start(t);o.stop(t+duration+.025);
+}
+function playSound(kind="click"){
+ if(!soundEnabled)return;
+ const patterns={click:[[520,.055,"triangle",.025,0]],action:[[440,.09,"triangle",.035,0],[660,.13,"sine",.03,.07]],year:[[392,.18,"sine",.04,0],[523,.2,"sine",.04,.14],[659,.28,"sine",.04,.29]],success:[[523,.12,"triangle",.04,0],[659,.12,"triangle",.04,.1],[784,.2,"sine",.04,.2]],danger:[[220,.18,"sawtooth",.025,0],[165,.22,"sawtooth",.025,.15]],magic:[[660,.12,"sine",.03,0],[880,.18,"sine",.025,.11],[1175,.24,"sine",.02,.22]]};
+ (patterns[kind]||patterns.click).forEach(a=>tone(...a));
+}
+function updateSoundButton(){const b=$("soundBtn");if(!b)return;b.textContent=soundEnabled?"🔊 Звук: вкл.":"🔇 Звук: выкл.";b.setAttribute("aria-pressed",String(soundEnabled));}
+
 
 const names=["Элдрик","Фаэлин","Мираэль","Торен","Лиора","Каэл","Эвелин","Бран","Сильвия","Арен","Нерис","Дарен","Иллиан","Веста","Рейнар","Искра","Ориан","Талия","Корвин","Сайра","Малрик","Эстель","Рунар","Виорика","Леонель","Астория","Гален","Нимрия","Эйдан","Фрея","Кассиан","Морвена","Люциан","Ириса","Дамиан","Селеста","Валериан","Наэла","Родерик","Элиана","Тарвис","Лисандра","Орвен","Мейра","Зарен","Киара","Фенрик","Элара","Севериан","Ровена"];
 const surnames=["Сумрачный","Златолист","Пепельный","Северный","Изумрудный","Воронье Крыло","Светозарный","Тихий Ручей","Железнобокий","Лунная Тень","Грозорождённый","Седой Волк","Красный Мыс","Серебряная Река","Каменное Сердце","Туманного Брода","Солнечный","Чернокорень","Высокий Холм","Медный Щит","Зимний Ветер","Белый Ястреб","Ночной Дозор","Ясная Звезда","Дубравный","Пепельная Роза","Штормовой"];
@@ -194,7 +214,7 @@ function showCreator(){
 }
 
 function say(t){s.log.unshift({age:s.age,year:s.year,text:t});
-s.log=s.log.slice(0,45)}
+s.log=s.log.slice(0,45);if(/побед|нашёл|нашла|награ|получил|призов|легенд/i.test(t))playSound("success");else if(/опас|проиграл|ран|пораж|не хват|иссяк|смерт|погиб/i.test(t))playSound("danger");}
 const championTitles=["Клинок Севера","Грозовой архимаг","Палач Бездны"];
 
 const championNames=["Варгрим Железный","Элирия Буревестница","Каэдор Безмолвный"];
@@ -487,6 +507,7 @@ function readSave(){
  try{return localStorage.getItem("eyrval_save");}catch(err){console.warn("Не удалось прочитать сохранение:",err);return null;}
 }
 function init(){
+ updateSoundButton();
  const saved=readSave();
  if(saved){
   try{
@@ -542,9 +563,9 @@ font-weight:normal">Слава: ${s.fame.toLocaleString("ru-RU")}</span>`;
 
  $("ageLabel").innerHTML=`${s.age} лет <small>· ${stages(s.age)}</small>`;
 
- $("yearHint").textContent=s.alive?(s.actions>0?`У тебя ещё ${s.actions} действия в этом году.`:"Год завершён. Пора двигаться дальше."):"Эта жизнь завершилась.";
+ $("yearHint").textContent=s.alive?(s.actions>0?`Осталось ${s.actions} действий. Можно продолжить занятия или завершить год сейчас.`:"Год завершён. Пора двигаться дальше."):"Эта жизнь завершилась.";
 
- $("ageBtn").disabled=!s.alive||s.actions>0;
+ $("ageBtn").disabled=!s.alive;
 $("ageBtn").textContent=s.alive?"ПРОЖИТЬ ГОД ▶":"ЖИЗНЬ ОКОНЧЕНА";
 
  $("bars").innerHTML=bar("Здоровье",s.health,100,"hp","❤️")+bar("Настроение",s.mood,100,"mood","😊")+bar("Мана",s.mana,Math.max(1,s.maxMana||100),"mana","🔮")+bar("Общение",s.social,100,"social","🫂")+bar("Стресс",s.stress,100,"","☁️");
@@ -690,7 +711,7 @@ say("Задание оказалось опаснее ожиданий. Ты в�
 }
 }
 
-function useAction(i){if(!s.alive||s.actions<=0)return;
+function useAction(i){if(!s.alive||s.actions<=0)return;playSound(i===0||i===1?"magic":"action");
 let old=s.actions;
 const action=actionDefs[i];
 if(actionAgeLocked(i)){say("Ты ещё слишком мал для такого занятия. Попробуй другое дело.");s.mood=clamp(s.mood+2);s.actions=old-1;render();return;}
@@ -850,7 +871,9 @@ say("Твой смелый поступок вошёл в баллады. Сла
 say("Подвиг обернулся опасностью. Ты выжил, но заплатил за смелость.");
 }}
 function ageUp(){
- if(!s.alive||s.actions>0)return;
+ if(!s.alive)return;playSound("year");
+ const unusedActions=Math.max(0,Number(s.actions)||0);
+ if(unusedActions>0)say(`Ты завершил год досрочно, не использовав ${unusedActions} действий.`);
  const previous=s.age;
  s.age++;
  s.year++;
@@ -977,7 +1000,8 @@ let b=e.target.closest("[data-profile]");
 if(b)showChild(+b.dataset.profile)});
 
 $("ageBtn").onclick=ageUp;
-$("saveBtn").onclick=save;
+$("soundBtn").onclick=()=>{soundEnabled=!soundEnabled;try{localStorage.setItem("eyrval_sound",soundEnabled?"on":"off");}catch(e){}updateSoundButton();if(soundEnabled)playSound("success");};
+$("saveBtn").onclick=()=>{playSound("click");save();};
 $("treasuryBtn").onclick=openTreasury;
 $("potionBtn").onclick=usePotion;
 $("lifeGoal").addEventListener("change",e=>{if(e.target.id==="goalSelect")setGoal(e.target.value);
